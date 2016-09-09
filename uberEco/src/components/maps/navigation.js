@@ -29,16 +29,28 @@ module.exports = React.createClass({
       // 3. station 2 location
       // 4. destination location
 
-  	return (
+      //these are all hardcoded example points
+    return (
       <View style={styles.container}>
       	<MapView 
           style={styles.map}
       	  initialRegion={this.state.region}
+          showUserLocation={true}
         >
           <MapView.Marker
-            coordinate={{latitude: 37.789182, longitude: -122.401493}}
-            title={'new marker'}
-            description={'this is a new marker'}
+            coordinate={{latitude: 37.783807, longitude: -122.408483}}
+            title={'station A'}
+            description={'get bike here'}
+          />
+          <MapView.Marker
+            coordinate={{latitude: 37.786825, longitude: -122.398148}}
+            title={'station B'}
+            description={'leave bike here'}
+          />
+          <MapView.Marker
+            coordinate={{latitude: 37.787783, longitude: -122.397013}}
+            title={'destination'}
+            description={'final destination'}
           />
         </MapView>
         <View style={styles.directions}>
