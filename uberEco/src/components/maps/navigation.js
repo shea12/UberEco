@@ -22,15 +22,40 @@ module.exports = React.createClass({
     };
 	},
   render: function() {
+
+    //need markers on the map for:
+      // 1. current location
+      // 2. station 1 location
+      // 3. station 2 location
+      // 4. destination location
+
   	return (
       <View style={styles.container}>
       	<MapView 
           style={styles.map}
       	  initialRegion={this.state.region}
-      	>
+        >
+          <MapView.Marker
+            coordinate={{latitude: 37.789182, longitude: -122.401493}}
+            title={'new marker'}
+            description={'this is a new marker'}
+          />
         </MapView>
         <View style={styles.directions}>
           <Text>Directions</Text>
+
+          <Text>Current Location to Station A
+                Distance: 
+          </Text>
+
+          <Text>Station A to Station B
+                Distance: 
+          </Text>
+
+          <Text>Station B to Destination
+                Distance: 
+          </Text>
+
         </View>
       </View>
   	);
