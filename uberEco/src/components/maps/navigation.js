@@ -11,7 +11,7 @@ import MapView from 'react-native-maps';
 var { width, height } = Dimensions.get('window');
 
 module.exports = React.createClass({
-	getInitialState: function() {
+  getInitialState: function() {
     return {
       region: {
         latitude: 37.78825,
@@ -20,7 +20,7 @@ module.exports = React.createClass({
         longitudeDelta: 0.0421
       }
     };
-	},
+  },
   render: function() {
 
     //need markers on the map for:
@@ -32,9 +32,9 @@ module.exports = React.createClass({
       //these are all hardcoded example points
     return (
       <View style={styles.container}>
-      	<MapView 
+        <MapView 
           style={styles.map}
-      	  initialRegion={this.state.region}
+          initialRegion={this.state.region}
           showUserLocation={true}
         >
           <MapView.Marker
@@ -70,7 +70,7 @@ module.exports = React.createClass({
 
         </View>
       </View>
-  	);
+    );
   }
 });
 

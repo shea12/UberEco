@@ -53,7 +53,40 @@ module.exports = React.createClass({
     });
   },
   onRequestPress: function() {
+<<<<<<< HEAD
     this.props.navigator.push({name: 'navigation'});
+=======
+    var origin = {
+      lat: this.state.annotation.latitude,
+      lon: this.state.annotation.longitude
+    }
+    var destination = {
+      lat: this.state.destination.position.lat,
+      lon: this.state.destination.position.lng
+    }
+    console.log(origin, destination);
+
+    var myHeaders = new Headers();
+    myHeaders.append('Content-Type', 'application/json');
+    
+    fetch('http://104.131.158.94:3000/api/navigation', {
+      method: 'POST',
+      headers: myHeaders,
+      mode: 'cors',
+      cache: 'default',
+      body: JSON.stringify({
+        currentLocation: origin,
+        destination: destination
+      })
+    })
+      .then((response) => {
+        console.log(response);
+        this.props.navigator.push({name: 'navigation'});
+      })
+      .catch((error) => {
+        console.log('error :(');
+      });
+>>>>>>> aa34dba8dee032477010fc9c3ea845525cf1c3d4
   }
 });
 
